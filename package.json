@@ -1,0 +1,21 @@
+{
+  "name": "ctg-oembed-provider",
+  "version": "0.0.1",
+  "description": "oEmbed provider for volunteer opportunities from CreateTheGood.org",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "oembed",
+    "volunteer",
+    "non-profit"
+  ],
+  "author": "ActiveLAMP",
+  "license": "All Right Reserved",
+  "dependencies": {
+    "express": "^4.11.2",
+    "request": "^2.53.0",
+    "rsvp": "^3.0.16"
+  }
+}
