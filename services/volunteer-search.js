@@ -1,4 +1,5 @@
 var request = require('request');
+var qstring = require('querystring');
 
 var ones_url_pattern = /https?:.*\/opportunity-details\/(\d+)(\?.*)?/;
 
@@ -21,7 +22,10 @@ function Client (apiUrl) {
             request.get(apiUrl + '/search?opportunity_id=' + id, function (err, response) {
                 var body = JSON.parse(response.body);
                 if (body.total_matching < 1) {
-                    callback(1);
+                    callback({
+                        code: 404,
+                        message: 'Not found'
+                    });
                 }
                 callback(null, body.matches[0]);
             });
@@ -29,7 +33,9 @@ function Client (apiUrl) {
         }
 
         request.get(apiUrl + '/toolkit/' + detailsUrl, function (err, response) {
-            
+            console.log(err);
+            console.log(response);
+            callback();
         });
     };
 };

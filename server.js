@@ -1,7 +1,7 @@
 'use strict';
 
 var config = {
-    'rest_api_url': 'http://ec2-54-165-78-156.compute-1.amazonaws.com:8100/api'
+    'rest_api_url': 'http://localhost:8000/app_dev.php/api'
 };
 
 var factory = require('./app.js').app;
